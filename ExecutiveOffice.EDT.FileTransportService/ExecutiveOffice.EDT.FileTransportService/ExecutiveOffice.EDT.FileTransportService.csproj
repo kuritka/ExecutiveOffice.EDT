@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FileOps\FileOps\FileOps.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Configuration\DEV\" />
     <Folder Include="Configuration\PROD\" />
     <Folder Include="Configuration\UAT\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExecutiveOffice.EDT.FileOps\ExecutiveOffice.EDT.FileOps.csproj" />
   </ItemGroup>
 
   <ItemGroup>

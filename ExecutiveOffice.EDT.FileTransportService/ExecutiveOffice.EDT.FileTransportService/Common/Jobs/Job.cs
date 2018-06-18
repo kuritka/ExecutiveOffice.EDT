@@ -1,7 +1,7 @@
 ﻿using System;
-using FileOps.Pipe;
+using ExecutiveOffice.EDT.FileOps.Pipe;
 using System.IO;
-using FileOps;
+using ExecutiveOffice.EDT.FileOps;
 
 namespace ExecutiveOffice.EDT.FileTransportService.Common.Jobs
 {

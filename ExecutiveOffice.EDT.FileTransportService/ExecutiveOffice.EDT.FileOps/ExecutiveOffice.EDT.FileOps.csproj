@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Steps\Custom\" />
+    <Folder Include="Steps\GZip\" />
+    <Folder Include="Steps\Envelope\" />
+    <Folder Include="Steps\Encrypt\" />
+    <Folder Include="Steps\Decrypt\" />
+    <Folder Include="Steps\GPGEncryptAndSign\" />
+    <Folder Include="Steps\GPGDecryptAndVerify\" />
+    <Folder Include="Steps\LoadState\" />
+    <Folder Include="Steps\CreateEmptyFile\" />
+    <Folder Include="Steps\Filter\" />
+    <Folder Include="Steps\Metadata\" />
+    <Folder Include="Steps\WriteValues\" />
+    <Folder Include="Steps\ReadValues\" />
+    <Folder Include="Steps\StoreState\" />
+    <Folder Include="Steps\Sequence\" />
+    <Folder Include="Steps\Verify\" />
+    <Folder Include="Steps\Sign\" />
+    <Folder Include="Steps\WaitForResponse\" />
+    <Folder Include="Steps\UnGZip\" />
+    <Folder Include="Steps\Rename\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FormatWith" Version="2.2.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="SSH.NET" Version="2016.1.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+   <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup> 
+
+</Project>

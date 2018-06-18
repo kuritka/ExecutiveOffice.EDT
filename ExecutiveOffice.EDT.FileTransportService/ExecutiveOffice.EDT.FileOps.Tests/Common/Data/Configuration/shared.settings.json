@@ -1,0 +1,26 @@
+{
+  "Common": [
+    {
+      "Name": "DefaultSource",
+      "StepSettings": {
+        "Type": "sftp",
+        "Host": "10.112.4.200",
+        "Port": 22,
+        "UserName": "ec2-user",
+        "PrivateKey": "/opt/FileOps/Release/Configuration/DEV/key.pem"
+      }
+    },
+    {
+      "Name": "Test",
+      "StepSettings": {
+        "Type": "sftp",
+        "Host": "10.112.4.222",
+        "Port": 22,
+        "UserName": "ec2-user",
+        "PrivateKey": "/opt/FileOps/Release/Configuration/DEV/key.pem"
+      }
+    }
+  ]
+}
+
+ 
