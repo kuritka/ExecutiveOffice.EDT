@@ -1,0 +1,24 @@
+﻿{
+  "Common": [
+    {
+      "Name": "HostToHost",
+      "StepSettings": {
+        "Type": "sftp",
+        "Host": "127.0.0.1",
+        "Port": 22,
+        "UserName": "ec2-user",
+        "PrivateKey": "c:\\Workspace\\keys\\host_to_host\\key.private"
+      }
+    },
+    {
+      "Name": "HyperArchive",
+      "StepSettings": {
+        "Type": "sftp",
+        "Host": "127.0.0.1",
+        "Port": 22,
+        "UserName": "ec2-user",
+        "PrivateKey": "c:\\Workspace\\keys\\host_to_host\\key.private"
+      }
+    }
+  ]
+}

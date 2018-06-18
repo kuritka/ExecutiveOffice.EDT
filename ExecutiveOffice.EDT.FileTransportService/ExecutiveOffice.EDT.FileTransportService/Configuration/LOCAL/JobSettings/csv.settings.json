@@ -1,0 +1,27 @@
+﻿{
+  "Identifier": "Csv_Edt_Local_H2H_Azure",
+  "Enabled": "True",
+  "GroupIdentifier": "",
+  "Pipe": [
+    {
+      "StepName": "From",
+      "Reference": "HostToHost",
+      "FileMask": "*.zip",
+      "IgnoreCaseSensitive": true,
+      "StepSettings": {
+        "Path": "/host_to_host/OUT"
+      }
+    },
+    {
+      "StepName": "UnZip",
+      "StepSettings": {}
+    },
+    {
+      "StepName": "To",
+      "Reference": "HyperArchive",
+      "StepSettings": {
+        "Path": "/hyperarchive/IN"
+      }
+    }
+  ]
+}
