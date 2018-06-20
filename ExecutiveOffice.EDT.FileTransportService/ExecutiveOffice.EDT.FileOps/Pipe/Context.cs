@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using ExecutiveOffice.EDT.FileOps.Configuration.Entities;
 
 namespace ExecutiveOffice.EDT.FileOps.Pipe
 {
     public class StepContext : IStepContext
     {
         private readonly List<FileInfo> _files = new List<FileInfo>();
-
-        private readonly IReadOnlyCollection<FileInfo> _previousFiles;
 
         private readonly Guid _stepGuid = Guid.NewGuid();
 
@@ -22,15 +20,19 @@ namespace ExecutiveOffice.EDT.FileOps.Pipe
 
         private readonly DirectoryInfo _workingDirectory;
 
-        public StepContext(IStepContext previousStepContext) : this(previousStepContext.ProcessingStep, previousStepContext.Guid, previousStepContext.WorkingDirectory)
+        private readonly IStepContext _parent;
+        private FromSettings _fromSettings;
+
+        public StepContext(IStepContext parentStepContext, IStep processingStep) : this(processingStep, parentStepContext.Guid, parentStepContext.WorkingDirectory, parentStepContext.FromSettings)
         {
-            if (previousStepContext == null) throw new ArgumentNullException($"{previousStepContext}");
-            _previousFiles =  previousStepContext.Files.ToList();
+            _parent = parentStepContext ?? throw new ArgumentNullException($"{parentStepContext}");
         }
 
 
-        public StepContext(IStep processingStep, Guid guid, DirectoryInfo workingDirectory)
+        public StepContext(IStep processingStep, Guid guid, DirectoryInfo workingDirectory, FromSettings fromSettings = null)
         {
+            _fromSettings = fromSettings;
+
             _workingDirectory = workingDirectory;
 
             _guid = guid;
@@ -56,6 +58,11 @@ namespace ExecutiveOffice.EDT.FileOps.Pipe
             }
         }
 
+        public void Attach(FromSettings fromSettings)
+        {
+            _fromSettings = fromSettings ?? throw new ArgumentNullException($"{nameof(FromSettings)}");
+        }
+
         public IEnumerable<FileInfo> Files => _files;
 
         public IStep ProcessingStep => _processingStep;
@@ -64,6 +71,8 @@ namespace ExecutiveOffice.EDT.FileOps.Pipe
 
         public Guid Guid => _guid;
 
-        public IEnumerable<FileInfo> PreviousFiles => _previousFiles;
+        public IStepContext Parent => _parent;
+
+        public FromSettings FromSettings => _fromSettings;
     }
 }

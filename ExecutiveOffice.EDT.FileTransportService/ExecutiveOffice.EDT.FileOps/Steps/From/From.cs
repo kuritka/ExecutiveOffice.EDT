@@ -25,6 +25,8 @@ namespace ExecutiveOffice.EDT.FileOps.Steps.From
             var processedFiles = channel.Copy();
 
             context.Attach(processedFiles);
+
+            context.Attach(_settings);
         }
     }
 }

@@ -40,13 +40,12 @@ namespace ExecutiveOffice.EDT.FileOps.Pipe
         {
             if (step == null) throw new ArgumentNullException($"{step}");
 
-            IStepContext currentContext = new StepContext(Current);
+            IStepContext currentContext = new StepContext(Current, step);
 
             _contexts.Push(currentContext);
 
             step.Execute(currentContext);
         }
-
 
 
         private void AttachWorkingDirectory()

@@ -38,8 +38,6 @@ namespace ExecutiveOffice.EDT.FileOps.Pipe
                 {
                     _aggregate.ExecuteStep(step);
 
-                    //_aggregate = step.Execute(_aggregate);
-
                     OnStepProcessed?.Invoke(_aggregate);
                 }
 

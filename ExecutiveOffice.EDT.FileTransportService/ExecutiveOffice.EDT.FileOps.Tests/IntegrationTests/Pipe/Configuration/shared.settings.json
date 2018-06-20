@@ -12,6 +12,20 @@
       }
     },
     {
+      "Name": "DefaultLocalSource",
+      "StepSettings": {
+        "Type": "Local",
+        "Path": "Pipe//LocalDirectory"
+      }
+    },
+    {
+      "Name": "EmptyLocalSource",
+      "StepSettings": {
+        "Type": "Local",
+        "Path": "Pipe//LocalDirectoryEmpty"
+      }
+    },
+    {
       "Name": "EmptySource",
       "StepSettings": {
         "Type": "sftp",

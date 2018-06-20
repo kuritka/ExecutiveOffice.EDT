@@ -118,7 +118,25 @@ namespace ExecutiveOffice.EDT.FileOps.Processors.Channels
 
         public void Delete(IEnumerable<FileInfo> targetFiles)
         {
-            throw new NotImplementedException();
+            var target = (FromSettings)_channelSettings;
+
+            var info = target.AsConnectionInfo();
+
+            using (SftpClient client = new SftpClient(info))
+            {
+                client.Connect();
+
+                if (client.Exists(target.Path))
+                {
+                    foreach (var file in targetFiles)
+                    {
+                        var filePath = Path.Combine(target.Path, file.Name);
+                        
+                        client.DeleteFile(filePath);
+                    }
+                }
+                else throw new Renci.SshNet.Common.SftpPathNotFoundException($"{target.Path}");
+            }
         }
 
         private bool IsFileMatch(string fileName, string fileMask)

@@ -19,10 +19,10 @@ namespace ExecutiveOffice.EDT.FileOps.Steps.To
         {
             DirectoryInfo flushDirectory = context.WorkingDirectory.CreateSubdirectory("Flush");
 
-            context.Attach(context.PreviousFiles);
+            context.Attach(context.Parent.Files);
 
             //TODO: fix To channel + channel factory to be able to accept IEnumerable<FileInfo> instead of DirectoryInfo
-            foreach (var file in context.PreviousFiles)
+            foreach (var file in context.Parent.Files)
             {
                 file.CopyTo(Path.Combine(flushDirectory.FullName,file.Name));
             }

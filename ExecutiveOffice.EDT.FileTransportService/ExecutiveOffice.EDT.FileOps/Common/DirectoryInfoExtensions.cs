@@ -72,5 +72,15 @@ namespace ExecutiveOffice.EDT.FileOps.Common
         }
 
 
+        public static DirectoryInfo DeleteOneFile(this DirectoryInfo target, FileInfo file)
+        {
+            if (Directory.Exists(target.FullName))
+            {
+                File.Delete(Path.Combine(target.FullName, file.Name));
+            }
+            return target;
+        }
+
+
     }
 }

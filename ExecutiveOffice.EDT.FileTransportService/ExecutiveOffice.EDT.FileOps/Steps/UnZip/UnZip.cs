@@ -17,7 +17,7 @@ namespace ExecutiveOffice.EDT.FileOps.Steps.UnZip
         {
             var compressor = new Processors.Compression.ZipFactory(_settings).Get();
 
-            foreach (var file in context.PreviousFiles)
+            foreach (var file in context.Parent.Files)
             {
                 var uncompressedFiles =  compressor.Decompress(file, context.WorkingDirectory);
 

@@ -91,7 +91,7 @@ namespace ExecutiveOffice.EDT.FileOps.Processors.Channels
             {
                 foreach (FileInfo targetFile in filesToDelete)
                 {
-                    File.Delete(targetFile.FullName);
+                    File.Delete(Path.Combine(_channelSettings.Path, targetFile.Name));
                 }
             }
             catch (Exception ex)

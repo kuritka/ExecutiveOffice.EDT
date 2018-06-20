@@ -1,0 +1,20 @@
+{
+  "Identifier": "TwoFilesInside",
+  "Enabled": "True",
+  "TriggerOnStart": "False",
+  "Cron": "*/1 * * * *",
+  "GroupIdentifier": "Unzip_Dev_DefaultSource_DefaultTarget",
+  "Pipe": [
+    {
+      "StepName": "UnZip",
+      "StepSettings": {
+      }
+    },
+    {
+      "StepName": "To",
+      "Reference": "DefaultTarget",
+      "StepSettings": {
+      }
+    }
+  ]
+}

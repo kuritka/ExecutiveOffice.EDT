@@ -114,6 +114,21 @@
     <None Update="IntegrationTests\FileOpsManager\Data\shared.settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="IntegrationTests\Pipe\Configuration\tearDown.WithoutFrom.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Configuration\tearDown.empty.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Configuration\unzip.local.Empty.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Configuration\unzip.local.AllZip.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Configuration\unzip.local.OneFileInside.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="IntegrationTests\Pipe\Configuration\unzip.sftp.ZeroFileInside.settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -130,6 +145,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntegrationTests\Pipe\Data\IN2.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Data\InnerFolder\testFile1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntegrationTests\Pipe\Data\NoFileInsideOneZip.zip">
