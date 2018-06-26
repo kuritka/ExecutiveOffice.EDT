@@ -86,6 +86,13 @@ namespace ExecutiveOffice.EDT.FileOps.Processors.Channels
                 using (var fileStream = new FileStream(file.FullName, FileMode.Open))
                 {
                     client.UploadFile(fileStream, $"{file.Name}");
+
+                    var uploadSuffix = ((ToSettings)_channelSettings).SuccessFileUploadSuffix;
+
+                    if (!string.IsNullOrEmpty(uploadSuffix))
+                    {
+                        client.UploadFile(fileStream, $"{file.Name}{uploadSuffix}");
+                    }
                 }
             }
             return files;

@@ -195,7 +195,7 @@ namespace ExecutiveOffice.EDT.FileOps.Tests.IntegrationTests.Pipe
             fileOpsManager.Execute();
 
             //assert
-            Assert.AreEqual(6, _localDirectory.GetFiles().Length);
+            Assert.AreEqual(5, _localDirectory.GetFiles().Length);
             Assert.IsTrue(File.Exists(Path.Combine(_localDirectory.FullName, "testFile1.txt")));
             Assert.IsTrue(File.Exists(Path.Combine(_localDirectory.FullName, "testFile2.txt")));
             Assert.IsTrue(File.Exists(Path.Combine(_localDirectory.FullName, "IN2.zip")));
@@ -220,7 +220,7 @@ namespace ExecutiveOffice.EDT.FileOps.Tests.IntegrationTests.Pipe
             fileOpsManager.Execute();
 
             //assert
-            Assert.AreEqual(5, _localDirectory.GetFiles().Length);
+            Assert.AreEqual(2, _localDirectory.GetFiles().Length);
             Assert.IsTrue(File.Exists(Path.Combine(_localDirectory.FullName, "testFile1.txt")));
             Assert.IsTrue(File.Exists(Path.Combine(_localDirectory.FullName, "testFile2.txt")));
         }

@@ -114,6 +114,12 @@
     <None Update="IntegrationTests\FileOpsManager\Data\shared.settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="IntegrationTests\Pipe\Configuration\to.sftp.MultipleTxt.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IntegrationTests\Pipe\Configuration\to.sftp.OneTxt.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="IntegrationTests\Pipe\Configuration\tearDown.WithoutFrom.settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -92,6 +92,14 @@ namespace ExecutiveOffice.EDT.FileOps.Processors.Channels
                 foreach (FileInfo targetFile in filesToDelete)
                 {
                     File.Delete(Path.Combine(_channelSettings.Path, targetFile.Name));
+
+
+                    var suffixFiletoDelete = new FileInfo(Path.Combine(_channelSettings.Path, $"{targetFile.Name}{Constants.FileExtensions.FileOps}"));
+
+                    if (File.Exists(suffixFiletoDelete.FullName))
+                    {
+                        File.Delete(suffixFiletoDelete.FullName);
+                    }
                 }
             }
             catch (Exception ex)
